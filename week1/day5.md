@@ -8,6 +8,8 @@
 * >>> sudo systemctl start postgresql.service
 * >>> sudo systemctl status postgresql.service
 * >>> sudo -u postgres psql
+* >>> \password
+* >>> \q or exit
 * >>> sudo systemctl restart postgresql
 * >>> sudo -u postgres psql
 
