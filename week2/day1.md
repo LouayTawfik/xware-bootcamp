@@ -185,40 +185,33 @@ UPDATE Exams
 UPDATE Exams
 	SET Time_Exam = 3
 	Where id = 5;
-	
-
-	
-
-	
 
 
 
 
+===============================================================================================
+
+
+
+https://pgexercises.com/questions/basic/selectall.html
+##Solution:
+select * from cd.facilities;
 
 
 
 
+https://pgexercises.com/questions/basic/selectspecific.html
+##Solution:
+select name, membercost from cd.facilities
 
 
 
+https://pgexercises.com/questions/basic/where.html
+##Solution:
+select * from cd.facilities where membercost > 0;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+https://pgexercises.com/questions/basic/where2.html
+##Solution:
+select facid, name, membercost, monthlymaintenance from cd.facilities where membercost > 0 and membercost < monthlymaintenance/50;
