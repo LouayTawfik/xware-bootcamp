@@ -23,8 +23,8 @@
 
 ## Delete commands of Professors with salary greater than 2000
 
-```DELETE FROM Professor 
-	WHERE SALARY > 20000;```
+<!--DELETE FROM Professor 
+	WHERE SALARY > 20000; -->
 
 
 `Nothing will change when i try to select all Professors and Students in the other session`
