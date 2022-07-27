@@ -13,6 +13,24 @@ create table if not exists Student_Phone(
 
 
 
+ id | f_phone | l_phone | student_id 
+----+---------+---------+------------
+  1 |  654365 |  984654 |          1
+  2 |   56432 |   89465 |          2
+  3 |   84654 |   65432 |          3
+  4 |   54532 |    6542 |          4
+  5 |    5612 |   56125 |          5
+  6 |   56122 |   89465 |          8
+  7 |   56432 |   56452 |         10
+  8 |  656532 |  846521 |         11
+
+
+
+
+
+
+
+
 create table if not exists Professor_Name(
 	id serial primary key,
 	F_Name varchar(40),
@@ -20,6 +38,21 @@ create table if not exists Professor_Name(
 	
 	Professor_id int references Professor(id)
 );
+
+
+
+
+
+ id | f_name  | l_name  | professor_id 
+----+---------+---------+--------------
+  1 | Hamada  | Hassan  |            1
+  2 | Hossam  | Ali     |            2
+  3 | Mustafa | Hussein |            3
+  4 | Khaled  | Omar    |            4
+  5 | Ahmed   | Ali     |            5
+  6 | Mahmoud | Ismael  |           11
+  7 | Amr     | Mustafa |           13
+
 
 ```
 
@@ -42,6 +75,13 @@ create table if not exists Person(
 
 
 
+ personid | lastname | firstname 
+----------+----------+-----------
+        1 | Wang     | Allen
+        2 | Alice    | Bob
+        3 | Smith    | Lee
+
+
 
 
 
@@ -52,6 +92,19 @@ create table if not exists Address(
 	
 	Person_id int references Person(personId)
 );
+
+
+
+ addressid |     city      |   state    | personid 
+-----------+---------------+------------+----------
+         1 | New York City | New York   |        2
+         2 | Leetcode      | California |        1
+
+
+
+
+
+
 ```
 
 
@@ -71,6 +124,14 @@ create table if not exists Address(
 ## JOIN steps
 
 `SELECT Person.firstName, lastName, city, state FROM Person FULL OUTER JOIN Address ON Address.personId = Person.personId;`
+
+
+ firstname | lastname |     city      |   state
+-----------+----------+---------------+------------
+ Bob       | Alice    | New York City | New York
+ Allen     | Wang     | Leetcode      | California
+ Lee       | Smith    |               | 
+
 
 
 
