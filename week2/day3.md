@@ -125,7 +125,7 @@ create table if not exists Address(
 
 `SELECT Person.firstName, lastName, city, state FROM Person FULL OUTER JOIN Address ON Address.personId = Person.personId;`
 
-
+```
  firstname | lastname |     city      |   state
 -----------+----------+---------------+------------
  Bob       | Alice    | New York City | New York
@@ -134,7 +134,7 @@ create table if not exists Address(
 
 
 
-
+```
 
 
 
