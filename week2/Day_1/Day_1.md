@@ -111,53 +111,37 @@
 
 	INSERT INTO Department(name, Faculty_id) VALUES('CS', 1), ('IS', 1), ('IT',1);
 
-	 Delete from Department
-	 	Where id IN(1,2,3);
 ============================================================================================
 
 	Insert Into Address(Governorate, City, Line_1Address, Line_2Address)
 		   Values('Giza', 'Giza', 'Faisal', null);
 ============================================================================================
 
-	INSERT INTO Student(F_Name, L_Name, Birth_Date, Image, Age)
-		   VALUES('Ali', 'Mohamed', 25-10-1980, 'Hello', 22);
-		   
-	INSERT INTO Student(F_Name, L_Name, Birth_Date, Image, Age)
-		   VALUES('Mahmoud', 'Omar', 1970, 'hi', 22),
-		   		 ('Khaled', 'Mustafa', 1988, 'hello', 22),
-				 ('Abdelrahman', 'Tarek', 1992, 'heyyy', 22);
-				 
-	INSERT INTO Student(F_Name, L_Name, Birth_Date, Image, Age)
-		   VALUES('Mustafa', 'Mahmoud', 1995, 'hellooo', 22);
-		   
-	INSERT INTO Student(F_Name, L_Name, F_Phone, L_Phone, Birth_Date, Image, Age)
-		   VALUES('Omar', 'Mustafa', 1977, 'hellooo', 22);
-		   
-	INSERT INTO Student(F_Name, L_Name, F_Phone, L_Phone, Birth_Date, Image, Age)
-		   VALUES('Ahmed', 'Hossam', 1991, 'sfss', 32);
-		   
-	INSERT INTO Student(F_Name, L_Name, F_Phone, L_Phone, Birth_Date, Image, Age)
-		   VALUES('Amr', 'Emad', 1991, 'heey', 32);
+	INSERT INTO Student(F_Name, L_Name, F_Phone, L_Phone, Birth_Date, Image)
+	            VALUES('Ali', 'Mohamed', 09852121, 05496321, 25-10-1980, 'Hello');
+	   
+	INSERT INTO Student(F_Name, L_Name, F_Phone, L_Phone, Birth_Date, Image)
+	            VALUES('Mahmoud', 'Omar', 321656, 846545, 1970, 'hi'),
+	   	      	 ('Khaled', 'Mustafa', 94652, 321684, 1988, 'hello'),
+			 ('Abdelrahman', 'Tarek', 3216, 65493, 1992, 'heyyy');
+			 
+	INSERT INTO Student(F_Name, L_Name, F_Phone, L_Phone, Birth_Date, Image)
+	            VALUES('Mustafa', 'Mahmoud', 564321, 654962, 1995, 'hellooo');
 ============================================================================================
 
-	INSERT INTO Professor(F_Name, L_Name, Age, Salary, Image)
-		   VALUES('Karem', 'Mousa', 25, 5000.0, 'Hi');
-		   
-	INSERT INTO Professor(F_Name, L_Name, Age, Salary, Image)
-		   VALUES('Tarek', 'Mahmoud', 40, 20000.0, 'helloo'), ('Salah', 'Ali', 37, 15000.0, 'hey'),
-			 ('Zain', 'Ahmed', 45, 30000.0, 'hii'), ('Omar', 'Fakhry', 47, 35000.0, 'hellooo');
-	INSERT INTO Professor(F_Name, L_Name, Age, Salary, Image) 
-		   VALUES('Hosny', 'Hassan', 42, 35000.0, 'heyyy');
+	INSERT INTO Professor(F_Name, L_Name, Age, Salary, Image, Faculty_id, Departement_id)
+	   VALUES('Tarek', 'Mahmoud', 40, 20000.0, 'helloo', 1, 1), ('Salah', 'Ali', 37, 15000.0, 'hey', 1, 2),
+	         ('Zain', 'Ahmed', 45, 30000.0, 'hii', 1, 3);
 ============================================================================================
 
 
 	INSERT INTO Subject(Name, Code, Faculty_id, Department_id)
-			VALUES('Programming Language', 'swe1', 1, 25), ('Algorithms and DS', 'swe2', 1, 25),
-			('Software Engineering', 'swe3', 1, 25), ('Mathematics', 'swe4', 1, 26),
-			('Business computer applications', 'swe5', 1, 26),
-			('Information and internet technology', 'swe6', 1, 26),
-			('Networking', 'swe7', 1, 27), ('Computer Graphics and Multimedia', 'swe8', 1, 27),
-			('Data Mining', 'swe9', 1, 27);
+		VALUES('Programming Language', 'swe1', 1, 1), ('Algorithms and DS', 'swe2', 1, 1),
+		('Software Engineering', 'swe3', 1, 1), ('Mathematics', 'swe4', 1, 2),
+		('Business computer applications', 'swe5', 1, 2),
+		('Information and internet technology', 'swe6', 1, 2),
+		('Networking', 'swe7', 1, 3), ('Computer Graphics and Multimedia', 'swe8', 1, 3),
+		('Data Mining', 'swe9', 1, 3);
 ============================================================================================
 			
 I	NSERT INTO Student_Address(Address_id, Student_id)
@@ -165,7 +149,7 @@ I	NSERT INTO Student_Address(Address_id, Student_id)
 ============================================================================================
 
 	INSERT INTO Course(Duration, Subject_id, Professor_id)
-			VALUES(2, 1, 1), (2, 2, 2), (3,3,3), (2,4,4), (6,5,5);
+		VALUES(2, 10, 1), (2, 11, 2), (3,12,3), (2,13,4), (6,14,5);
 ============================================================================================
 			
 	INSERT INTO Course_Enrolment(Course_id, Student_id)
@@ -173,9 +157,8 @@ I	NSERT INTO Student_Address(Address_id, Student_id)
 ============================================================================================
 
 	INSERT INTO Exams(Date_Exam, Time_Exam, Duration, Course_id)
-		   VALUES(2015, 8, 2, 1), (2016, 8, 2, 2), (2017, 8, 2, 3),
-			 (2018, 8, 2, 4), (2019, 8, 2, 5);
-	         
+	   VALUES(2015, 8, 2, 6), (2016, 8, 2, 7), (2017, 8, 2, 8),
+	         (2018, 8, 2, 9), (2019, 8, 2, 10);
 ```
 			 
 ===============================================
@@ -184,138 +167,138 @@ I	NSERT INTO Student_Address(Address_id, Student_id)
 ```
 SELECT * from Student;
 
- id |   f_name    | l_name  | birth_date |    image     | age 
-----+-------------+---------+------------+--------------+-----
-  1 | Ali         | Mohamed |      -1965 | \x48656c6c6f | 22
-  2 | Mahmoud     | Omar    |       1970 | hi           | 22
-  3 | Khaled      | Mustafa |       1988 | hello        | 22
-  4 | Abdelrahman | Tarek   |       1992 | heyyy        | 22
-  5 | Mustafa     | Mahmoud |       1995 | hellooo      | 22
-  8 | Omar        | Mustafa |       1977 | blabla       | 22
- 10 | Ahmed       | Hosaam  |       1991 | sfss         | 32
- 11 | Amr         | Emad    |       1991 | heey         | 32
+ id |   f_name    | l_name  | f_phone | l_phone | birth_date |  image  
+----+-------------+---------+---------+---------+------------+---------
+  1 | Ali         | Mohamed | 9852121 | 5496321 | -1965      | Hello
+  2 | Mahmoud     | Omar    |  321656 |  846545 | 1970       | hi
+  3 | Khaled      | Mustafa |   94652 |  321684 | 1988       | hello
+  4 | Abdelrahman | Tarek   |    3216 |   65493 | 1992       | heyyy
+  5 | Mustafa     | Mahmoud |  564321 |  654962 | 1995       | hellooo
+  6 | Ali         | Mohamed | 9852121 | 5496321 | -1965      | Hello
+  7 | Mahmoud     | Omar    |  321656 |  846545 | 1970       | hi
+  8 | Khaled      | Mustafa |   94652 |  321684 | 1988       | hello
+  9 | Abdelrahman | Tarek   |    3216 |   65493 | 1992       | heyyy
+ 10 | Mustafa     | Mahmoud |  564321 |  654962 | 1995       | hellooo
+
 
 
 
 SELECT * from Professor;
 
-	 id | age | salary |  image  | faculty_id | department_id | course_id 
-----+-----+--------+---------+------------+---------------+-----------
-  1 |  25 |   5000 | Hi      |            |               |          
-  2 |  40 |  20000 | helloo  |            |               |          
-  3 |  37 |  20000 | hey     |            |               |          
-  4 |  45 |  20000 | hii     |            |               |          
-  5 |  47 |  20000 | hellooo |            |               |          
- 11 |  37 |  30000 | sghfsh  |          1 |            25 |         1
- 13 |  47 |  40000 | ashdg   |          1 |            26 |         2
+ id | f_name | l_name  | age | salary | image  | faculty_id | departement_id 
+----+--------+---------+-----+--------+--------+------------+----------------
+  1 | Tarek  | Mahmoud |  40 |  20000 | helloo |          1 |              1
+  2 | Salah  | Ali     |  37 |  15000 | hey    |          1 |              2
+  3 | Zain   | Ahmed   |  45 |  30000 | hii    |          1 |              3
+
 
 
 SELECT * from Subject;
 
  id |                name                 | code | faculty_id | department_id 
 ----+-------------------------------------+------+------------+---------------
-  1 | Programming Language                | swe1 |          1 |            25
-  2 | Algorithms and DS                   | swe2 |          1 |            25
-  3 | Software Engineering                | swe3 |          1 |            25
-  4 | Mathematics                         | swe4 |          1 |            26
-  5 | Business computer applications      | swe5 |          1 |            26
-  6 | Information and internet technology | swe6 |          1 |            26
-  7 | Networking                          | swe7 |          1 |            27
-  8 | Computer Graphics and Multimedia    | swe8 |          1 |            27
-  9 | Data Mining                         | swe9 |          1 |            27
+  1 | Programming Language                | swe1 |          1 |             1
+  2 | Algorithms and DS                   | swe2 |          1 |             1
+  3 | Software Engineering                | swe3 |          1 |             1
+  4 | Mathematics                         | swe4 |          1 |             2
+  5 | Business computer applications      | swe5 |          1 |             2
+  6 | Information and internet technology | swe6 |          1 |             2
+  7 | Networking                          | swe7 |          1 |             3
+  8 | Computer Graphics and Multimedia    | swe8 |          1 |             3
+  9 | Data Mining                         | swe9 |          1 |             3
+
 
 	
 SELECT * from Course;
 
- id | duration | subject_id | professor_id 
+  id | duration | subject_id | professor_id 
 ----+----------+------------+--------------
-  1 |        2 |          1 |            1
-  2 |        2 |          2 |            2
-  3 |        3 |          3 |            3
-  4 |        2 |          4 |            4
-  5 |        6 |          5 |            5
+  6 |        2 |         10 |            1
+  7 |        2 |         11 |            2
+  8 |        3 |         12 |            3
+  9 |        2 |         13 |            4
+ 10 |        6 |         14 |            5
+
 
 
 SELECT * from Exams;
 
  id | date_exam | time_exam | duration | course_id 
 ----+-----------+-----------+----------+-----------
-  1 |      2015 |         8 |        2 |         1
-  2 |      2016 |         6 |        2 |         2
-  3 |      2017 |         5 |        2 |         3
-  4 |      2018 |         4 |        2 |         4
-  5 |      2019 |         3 |        2 |         5
+  6 |      2015 |         8 |        2 |         6
+  7 |      2016 |         8 |        2 |         7
+  8 |      2017 |         8 |        2 |         8
+  9 |      2018 |         8 |        2 |         9
+ 10 |      2019 |         8 |        2 |        10
+
 
 
 SELECT * from Department;
 
  id | name | faculty_id 
 ----+------+------------
- 25 | CS   |          1
- 26 | IS   |          1
- 27 | IT   |          1
+  1 | CS   |          1
+  2 | IS   |          1
+  3 | IT   |          1
+
 
 
 
 Select * from Professor where Age =40; 
 
- id | age | salary | image  | faculty_id | department_id | course_id 
-----+-----+--------+--------+------------+---------------+-----------
-  2 |  40 |  20000 | helloo |            |               |          
+ id | f_name | l_name  | age | salary | image  | faculty_id | departement_id 
+----+--------+---------+-----+--------+--------+------------+----------------
+  1 | Tarek  | Mahmoud |  40 |  20000 | helloo |          1 |              1
+      
 
 
 SELECT * from Professor where Salary > 10000;
 
-	 id | age | salary |  image  | faculty_id | department_id | course_id 
-----+-----+--------+---------+------------+---------------+-----------
-  2 |  40 |  20000 | helloo  |            |               |          
-  3 |  37 |  20000 | hey     |            |               |          
-  4 |  45 |  20000 | hii     |            |               |          
-  5 |  47 |  20000 | hellooo |            |               |          
- 11 |  37 |  30000 | sghfsh  |          1 |            25 |         1
- 13 |  47 |  40000 | ashdg   |          1 |            26 |         2
+ id | f_name | l_name  | age | salary | image  | faculty_id | departement_id 
+----+--------+---------+-----+--------+--------+------------+----------------
+  1 | Tarek  | Mahmoud |  40 |  20000 | helloo |          1 |              1
+  2 | Salah  | Ali     |  37 |  15000 | hey    |          1 |              2
+  3 | Zain   | Ahmed   |  45 |  30000 | hii    |          1 |              3
+
 
 
 SELECT * from Professor ORDER BY Salary;
 
- id | age | salary |  image  | faculty_id | department_id | course_id 
-----+-----+--------+---------+------------+---------------+-----------
-  1 |  25 |   5000 | Hi      |            |               |          
-  2 |  40 |  20000 | helloo  |            |               |          
-  3 |  37 |  20000 | hey     |            |               |          
-  4 |  45 |  20000 | hii     |            |               |          
-  5 |  47 |  20000 | hellooo |            |               |          
- 11 |  37 |  30000 | sghfsh  |          1 |            25 |         1
- 13 |  47 |  40000 | ashdg   |          1 |            26 |         2
+ id | f_name | l_name  | age | salary | image  | faculty_id | departement_id 
+----+--------+---------+-----+--------+--------+------------+----------------
+  2 | Salah  | Ali     |  37 |  15000 | hey    |          1 |              2
+  1 | Tarek  | Mahmoud |  40 |  20000 | helloo |          1 |              1
+  3 | Zain   | Ahmed   |  45 |  30000 | hii    |          1 |              3
+
 
 
 SELECT * from Student ORDER BY Birth_Date;
 
- id |   f_name    | l_name  | birth_date |    image     | age 
-----+-------------+---------+------------+--------------+-----
-  1 | Ali         | Mohamed |      -1965 | \x48656c6c6f | 22
-  2 | Mahmoud     | Omar    |       1970 | hi           | 22
-  8 | Omar        | Mustafa |       1977 | blabla       | 22
-  3 | Khaled      | Mustafa |       1988 | hello        | 22
- 11 | Amr         | Emad    |       1991 | heey         | 32
- 10 | Ahmed       | Hosaam  |       1991 | sfss         | 32
-  4 | Abdelrahman | Tarek   |       1992 | heyyy        | 22
-  5 | Mustafa     | Mahmoud |       1995 | hellooo      | 22
+ id |   f_name    | l_name  | f_phone | l_phone | birth_date |  image  
+----+-------------+---------+---------+---------+------------+---------
+  1 | Ali         | Mohamed | 9852121 | 5496321 | -1965      | Hello
+  6 | Ali         | Mohamed | 9852121 | 5496321 | -1965      | Hello
+  2 | Mahmoud     | Omar    |  321656 |  846545 | 1970       | hi
+  7 | Mahmoud     | Omar    |  321656 |  846545 | 1970       | hi
+  3 | Khaled      | Mustafa |   94652 |  321684 | 1988       | hello
+  8 | Khaled      | Mustafa |   94652 |  321684 | 1988       | hello
+  9 | Abdelrahman | Tarek   |    3216 |   65493 | 1992       | heyyy
+  4 | Abdelrahman | Tarek   |    3216 |   65493 | 1992       | heyyy
+  5 | Mustafa     | Mahmoud |  564321 |  654962 | 1995       | hellooo
+ 10 | Mustafa     | Mahmoud |  564321 |  654962 | 1995       | hellooo
+
 
 
 SELECT *, AVG(Salary)
 	FROM Professor
 	GROUP BY id;
 	
-	 id | age | salary |  image  | faculty_id | department_id | course_id |  avg  
-----+-----+--------+---------+------------+---------------+-----------+-------
-  4 |  45 |  20000 | hii     |            |               |           | 20000
- 13 |  47 |  40000 | ashdg   |          1 |            26 |         2 | 40000
-  2 |  40 |  20000 | helloo  |            |               |           | 20000
- 11 |  37 |  30000 | sghfsh  |          1 |            25 |         1 | 30000
-  3 |  37 |  20000 | hey     |            |               |           | 20000
-  5 |  47 |  20000 | hellooo |            |               |           | 20000
-  1 |  25 |   5000 | Hi      |            |               |           |  5000
+ id | f_name | l_name  | age | salary | image  | faculty_id | departement_id |  avg  
+----+--------+---------+-----+--------+--------+------------+----------------+-------
+  2 | Salah  | Ali     |  37 |  15000 | hey    |          1 |              2 | 15000
+  1 | Tarek  | Mahmoud |  40 |  20000 | helloo |          1 |              1 | 20000
+  3 | Zain   | Ahmed   |  45 |  30000 | hii    |          1 |              3 | 30000
+
 
 
 

@@ -109,23 +109,23 @@ Select Subject.id, Name, Code, Duration from Subject INNER JOIN Course ON Course
 
  id |              name              | code | duration 
 ----+--------------------------------+------+----------
- 10 | Programming Language           | swe1 |        2
- 11 | Algorithms and DS              | swe2 |        2
- 12 | Software Engineering           | swe3 |        3
- 13 | Mathematics                    | swe4 |        2
- 14 | Business computer applications | swe5 |        6
+  1 | Programming Language           | swe1 |        2
+  2 | Algorithms and DS              | swe2 |        2
+  3 | Software Engineering           | swe3 |        3
+  4 | Mathematics                    | swe4 |        2
+  5 | Business computer applications | swe5 |        6
+
 
 
 
 SELECT Subject.id, Name, Code, Duration, F_name, L_name FROM Subject INNER JOIN Course ON Course.Subject_id = Subject.id LEFT JOIN Professor ON Course.Professor_id = Professor.id;
 
- id |              name              | code | duration | f_name | l_name  
-----+--------------------------------+------+----------+--------+---------
- 10 | Programming Language           | swe1 |        2 | Karem  | Mousa
- 11 | Algorithms and DS              | swe2 |        2 | Tarek  | Mahmoud
- 12 | Software Engineering           | swe3 |        3 | Salah  | Ali
- 13 | Mathematics                    | swe4 |        2 | Zain   | Ahmed
- 14 | Business computer applications | swe5 |        6 | Omar   | Fakhry
+ id |         name         | code | duration | f_name | l_name  
+----+----------------------+------+----------+--------+---------
+  1 | Programming Language | swe1 |        2 | Tarek  | Mahmoud
+  2 | Algorithms and DS    | swe2 |        2 | Salah  | Ali
+  3 | Software Engineering | swe3 |        3 | Zain   | Ahmed
+
 
 
 SELECT Student.id, F_name, L_name, Line_1Address, Line_2Address FROM Student INNER JOIN Student_Address ON Student_Address.Student_id = Student.id INNER JOIN Address ON Student_Address.Address_id = Address.id;
@@ -146,13 +146,12 @@ SELECT Student.id, F_name, L_name, Line_1Address, Line_2Address FROM Student INN
 
 SELECT Student.id, F_Name, L_Name, Duration from Student INNER JOIN Course_Enrolment ON Course_Enrolment.Student_id = Student.id INNER JOIN Course ON Course.id = Course_Enrolment.Course_id;
 
- id |   f_name    | l_name  | duration 
-----+-------------+---------+----------
-  1 | Ali         | Mohamed |        2
-  2 | Mahmoud     | Omar    |        2
-  3 | Khaled      | Mustafa |        3
-  4 | Abdelrahman | Tarek   |        2
-  5 | Mustafa     | Mahmoud |        6
+ id | f_name  | l_name  | duration 
+----+---------+---------+----------
+  1 | Ali     | Mohamed |        2
+  2 | Mahmoud | Omar    |        2
+  3 | Khaled  | Mustafa |        3
+
 
 
 ```
