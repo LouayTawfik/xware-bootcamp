@@ -7,9 +7,8 @@ CREATE TABLE IF NOT EXISTS PERSON(
 );
 
 
-INSERT INTO PERSON(email) VALUES('hello@gmail.com');
-INSERT INTO PERSON(email) VALUES('hello@gmail.com'), ('hello@gmail.com'), ('hiii@gmail.com'),
-		('hello@gmail.com'), ('yoo@gmail.com'), ('hello@gmail.com');
+IINSERT INTO PERSON(email) VALUES('john@example.com'), ('john@example.com'), ('bob@example.com'),
+		('john@example.com'), ('john@example.com'), ('john@example.com');
 		
 		
  id |      email       
@@ -58,7 +57,7 @@ SELECT email, COUNT(email) FROM PERSON GROUP BY email;
 ##Another Soltion
 ```
 DELETE FROM PERSON a USING PERSON b 
-	WHERE a.id > b.id AND a.email = b.email AND a.email = 'hello@gmail.com';
+	WHERE a.id > b.id AND a.email = b.email AND a.email = 'john@example.com';
 	
  id |      email       
 ----+------------------
