@@ -37,27 +37,8 @@ SELECT email, COUNT(email) FROM PERSON GROUP BY email;
 
 
 
-
- DELETE FROM PERSON
- 	WHERE id IN(SELECT id FROM(SELECT id, ROW_NUMBER() OVER(PARTITION BY email ORDER BY id)
- 	AS row_num FROM PERSON) T WHERE T.row_num > 1);
- 	
- 	
- 	
- id |      email       
-----+------------------
-  1 | john@example.com
-  3 | bob@example.com
-
-
-```
-
-==============================================================================================
-
-##Another Soltion
-```
 DELETE FROM PERSON a USING PERSON b 
-	WHERE a.id > b.id AND a.email = b.email AND a.email = 'john@example.com';
+	WHERE a.id > b.id AND a.email = b.email;
 	
  id |      email       
 ----+------------------
@@ -65,5 +46,7 @@ DELETE FROM PERSON a USING PERSON b
   3 | bob@example.com
 
 
-	
+
 ```
+
+
