@@ -1,4 +1,4 @@
-##Please Try To Solve This Problem
+## Please Try To Solve This Problem
 Table: Person
 +-------------+---------+
 | Column Name | Type    |
@@ -16,7 +16,7 @@ The query result format is in the following example.
 ================================================================================
 
 
-##Example 1:
+## Example 1:
 Input: 
 Person table:
 +----+------------------+
