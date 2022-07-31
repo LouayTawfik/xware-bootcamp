@@ -12,15 +12,16 @@ INSERT INTO PERSON(email) VALUES('hello@gmail.com'), ('hello@gmail.com'), ('hiii
 		('hello@gmail.com'), ('yoo@gmail.com'), ('hello@gmail.com');
 		
 		
-id |      email      
-----+-----------------
-  1 | hello@gmail.com
-  2 | hello@gmail.com
-  3 | hello@gmail.com
-  4 | hiii@gmail.com
-  5 | hello@gmail.com
-  6 | yoo@gmail.com
-  7 | hello@gmail.com
+ id |      email       
+----+------------------
+  1 | john@example.com
+  2 | john@example.com
+  3 | bob@example.com
+  4 | john@example.com
+  5 | john@example.com
+  6 | john@example.com
+
+
 
 		
 
@@ -29,11 +30,12 @@ SELECT email, COUNT(email) FROM PERSON GROUP BY email;
 
 
 
-      email      | count 
------------------+-------
- hello@gmail.com |     5
- yoo@gmail.com   |     1
- hiii@gmail.com  |     1
+      email       | count 
+------------------+-------
+ bob@example.com  |     1
+ john@example.com |     5
+
+
 
 
 
@@ -43,11 +45,11 @@ SELECT email, COUNT(email) FROM PERSON GROUP BY email;
  	
  	
  	
- id |      email      
-----+-----------------
-  1 | hello@gmail.com
-  4 | hiii@gmail.com
-  6 | yoo@gmail.com
+ id |      email       
+----+------------------
+  1 | john@example.com
+  3 | bob@example.com
+
 
 ```
 
@@ -58,11 +60,11 @@ SELECT email, COUNT(email) FROM PERSON GROUP BY email;
 DELETE FROM PERSON a USING PERSON b 
 	WHERE a.id > b.id AND a.email = b.email AND a.email = 'hello@gmail.com';
 	
-id |      email      
-----+-----------------
-  1 | hello@gmail.com
-  4 | hiii@gmail.com
-  6 | yoo@gmail.com
+ id |      email       
+----+------------------
+  1 | john@example.com
+  3 | bob@example.com
+
 
 	
 ```
