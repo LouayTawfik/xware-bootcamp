@@ -1,4 +1,6 @@
 ## Please Try To Solve This Problem
+
+```
 Table: Person
 +-------------+---------+
 | Column Name | Type    |
@@ -12,11 +14,14 @@ Write an SQL query to delete all the duplicate emails, keeping only one unique e
 After running your script, the answer shown is the Person table. The driver will first compile and run your piece of code and then show the Person table. The final order of the Person table does not matter.
 The query result format is in the following example.
 
+```
+
 
 ================================================================================
 
 
 ## Example 1:
+```
 Input: 
 Person table:
 +----+------------------+
@@ -34,3 +39,4 @@ Output:
 | 2  | bob@example.com  |
 +----+------------------+
 Explanation: john@example.com is repeated two times. We keep the row with the smallest Id = 1.
+```
