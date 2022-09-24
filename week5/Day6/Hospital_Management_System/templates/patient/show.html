@@ -1,0 +1,24 @@
+{% extends 'patient/base.html' %}
+
+
+{% block content %}
+
+    {% if is_authenticated == True %}
+            <p>Full Name: {{ patient.full_name }}</p>
+            <p>Age: {{ patient.age }}</p>
+            <p>National id: {{ patient.national_id }}</p>
+            <p>Email: {{ patient.email }}</p>
+            <p>Phone1: {{ patient.phone1 }}</p>
+            <p>Phone2: {{ patient.phone2 }}</p><br> <br>
+
+
+            <strong>Address:</strong>
+            
+            <p>Governorate: {{ patient.address_id.governorate }}</p>
+            <p>City: {{ patient.address_id.city }}</p>
+            <p>Line1: {{ patient.address_id.line_1 }}</p>
+            <p>Line2: {{ patient.address_id.line_2 }}</p>
+    {% endif %}
+    
+
+{% endblock content %}

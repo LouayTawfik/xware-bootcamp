@@ -1,0 +1,39 @@
+{% extends 'patient/base.html' %}
+
+
+{% block content %}
+
+
+    {% if is_found == False %}
+        <p>{{ error }}</p>
+    {% elif is_valid == True %}
+        <p>{{ is_valid }}</p>
+    {% else %}
+        <p>{{ is_valid }}</p>
+    {% endif %}
+
+
+
+
+
+
+
+
+<form method="post">
+
+
+    <input type="number" name="patient_id" placeholder="enter patient id"><br><br>
+    
+    <input type="text" name="diagnosis" placeholder="enter new diagnosis">
+    <input type="text" name="treatment" placeholder="enter new treatment">
+    <input type="time" name="examination_date"><br><br>
+
+    <input type="submit" value="Update">
+
+
+
+    {% csrf_token %}
+
+</form>
+
+{% endblock content %}

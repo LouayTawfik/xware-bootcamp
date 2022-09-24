@@ -1,0 +1,45 @@
+{% extends 'patient/base.html' %}
+
+{% block content %}
+    {% if exception == True  %}
+        <p>{{ error }}</p>
+    {% elif is_valid == True %}
+        <p>{{ is_valid }}</p>
+    {% elif is_valid == False %}
+        <p>{{ is_valid }}</p>
+    {% endif %}
+    
+
+
+
+<form method="post">
+
+
+    
+
+    <input type="text" name="full_name" placeholder="enter full name">
+    <input type="number" name="age" placeholder="enter age">
+    <input type="text" name="national_id" placeholder="enter national id">
+    <input type="text" name="email" placeholder="enter email">
+    <input type="text" name="phone1" placeholder="enter phone1">
+    <input type="text" name="phone2" placeholder="enter phone2">
+    <select name="gender" id="gender">
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+    </select>
+
+    <input type="number" name="address_id" placeholder="enter address id"> <br> <br>
+    {{ address_form }} <br><br>
+   
+    <input type="submit" value="Create">
+
+    {% csrf_token %}
+
+</form>
+
+
+
+{% endblock content %}
+
+
+

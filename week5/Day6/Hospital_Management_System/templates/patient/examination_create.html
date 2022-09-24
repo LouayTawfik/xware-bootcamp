@@ -1,0 +1,51 @@
+{% extends 'patient/base.html' %}
+
+
+    {% if is_valid == True %}
+
+        <p>{{ examination.patient_id.full_name }}</p>
+        <p>{{ examination.patient_id.age }}</p>
+        <p>{{ examination.patient_id.national_id }}</p>
+        <p>{{ examination.patient_id.email }}</p>
+        <p>{{ examination.patient_id.phone1 }}</p>
+        <p>{{ examination.patient_id.phone2 }}</p>
+
+
+        <p>{{ examination.diagnosis }}</p>
+        <p>{{ examination.treatment }}</p>
+        <p>{{ examination.examination_date }}</p>
+
+
+    {% elif error == 'Sorry patient id not found' %}
+        <p>{{ error }}</p>
+
+
+
+    {% else %}
+        <p>{ Data is not valid }</p>
+
+    {% endif %}
+
+
+
+{% block content %}
+
+
+    <form method="post">
+
+        <input type="number" name="patient_id" placeholder="please enter patient id">
+        <input type="text" name="diagnosis" placeholder="please enter diagnosis">
+        <input type="text" name="treatment" placeholder="please enter treatment">
+        <input type="time" name="examination_date" placeholder="please enter examination date">
+
+
+        <input type="submit" value="Create">
+
+
+        {% csrf_token %}
+
+
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'patient/base.html' %}
+
+
+{% block content %}
+
+    {% if is_authenticated == True %}
+        {% for examination in examinations %}
+            <p>Full Name: {{ examination.patient_id.full_name }}</p>
+            <p>Age: {{ examination.patient_id.age }}</p>
+            <p>National ID: {{ examination.patient_id.national_id }}</p>
+            <p>Email: {{ examination.patient_id.email }}</p>
+            <p>Phone1: {{ examination.patient_id.phone1 }}</p>
+            <p>Phone2: {{ examination.patient_id.phone2 }}</p>
+            <p>Governorate: {{ examination.patient_id.address_id.governorate }}</p>
+            <p>City: {{ examination.patient_id.address_id.city }}</p>
+            <p>Line1: {{ examination.patient_id.address_id.line_1 }}</p>
+            <p>Line2: {{ examination.patient_id.address_id.line_2 }}</p><br> <br>
+            
+
+            <strong>Examinations:</strong>
+
+            <p>Diagnosis: {{ examination.diagnosis }}</p>
+            <p>Treatment: {{ examination.treatment }}</p>
+            <p>Examination Date: {{ examination.examination_date }}</p>
+
+            {% if counter == 'True' %}
+                <br>
+            {% endif %}
+        {% endfor %}
+
+
+    {% endif %}
+
+
+{% endblock %}

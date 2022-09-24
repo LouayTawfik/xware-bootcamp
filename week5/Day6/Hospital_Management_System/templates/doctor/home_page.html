@@ -1,0 +1,69 @@
+{% extends 'doctor/base.html' %}
+
+
+{% block content %}
+
+    {% if is_found == False %}
+
+        <p>{{ error }}</p>
+
+    {% elif is_valid == True %}
+        {% for examination in examination_info %}
+            {% for patient in patient_info %}
+                <strong>Patient Info:</strong><br>
+                <p>Full Name: {{ examination.patient_id.full_name }}</p>
+                <p>Age: {{ examination.patient_id.age }}</p>
+                <p>National id: {{ examination.patient_id.national_id }}</p>
+                <p>Email: {{ examination.patient_id.email }}</p>
+                <p>Phone1: {{ examination.patient_id.phone1 }}</p>
+                <p>Phone2: {{ examination.patient_id.phone2 }}</p>
+                <p>Gender: {{ examination.patient_id.gender }}</p><br>
+
+
+                <strong>Address Info:</strong><br>
+                <p>Governorate: {{ patient.address_id.governorate }}</p>
+                <p>City: {{ patient.address_id.city }}</p>
+                <p>Line1: {{ patient.address_id.line_1 }}</p>
+                <p>Line2: {{ patient.address_id.line_2 }}</p><br>
+
+
+
+            <strong>Exmainations Info: </strong><br>
+            <p>Diagnosis: {{ examination.diagnosis }}</p>
+            <p>Treatment: {{ examination.treatment }}</p>
+            <p>Examination Date: {{ examination.examination_date }}</p>
+
+            {% endfor %}
+        {% endfor %}
+
+
+
+
+    {% else %}
+        <p>{{ is_valid }}</p>
+
+    {% endif %}
+
+        
+
+
+
+
+
+<form method="POST">
+
+    <input type="search" name="full_name" placeholder="search by full name">
+    <input type="search" name="national_id" placeholder="search by national id">
+    <input type="search" name="email" placeholder="search by email">
+    <input type="search" name="phone1" placeholder="search by phone1">
+
+
+    <input type="submit" value="Search">
+
+    {% csrf_token %}
+
+</form>
+
+
+
+{% endblock content %}
